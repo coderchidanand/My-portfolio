@@ -1,0 +1,272 @@
+#app { height: 100% }
+html,
+
+
+body {   
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.port:hover{
+  text-shadow: blue -3px 0,red 2px 0;
+
+}
+.glass{  
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(100deg, rgba(0,0,0,.2),rgba(0,0,0,.2)  );
+  box-shadow: 0 10px 26px 0;
+  /* position: relative; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60vh;
+  width: 70%;
+}
+
+.pic{
+  left: 20px;
+  /* background-color: aqua; */
+  width: 250px;
+  height: 250px;
+  display: flex;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+
+}
+.pic::before{
+  content: "";
+  position: absolute;
+  background: linear-gradient(315deg, rgb(255, 252, 52), rgb(23, 255, 23));
+  inset: 0px 70px;
+  transition: 0.5s;
+  animation: animate 4s linear infinite;
+
+}
+@keyframes animate {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+  
+}
+.pic:hover:before{
+   inset: 0 0
+}
+
+.c_img{
+  display: flex;
+  align-items: center;  
+} 
+
+.content {
+  position: relative; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;/* Adjust this value as needed */
+}
+.circle1, .circle2{
+  animation: scaleAnim 1s infinite alternate ;
+  transition: all ease-in-out;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7)); 
+  }
+@keyframes scaleAnim {
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.2);
+
+  }
+  
+}
+
+.immg{
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  overflow: hidden;
+
+}
+.immg img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease-in;
+}
+.immg img:hover{
+  transform: scale(1.2);
+}
+
+
+
+.btn{
+  position: relative;
+  overflow: hidden;
+}
+
+.btn button{
+  /* position: relative; */
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  /* overflow: hidden; */
+}
+
+.btn button:hover{
+   letter-spacing: 3px;
+  }
+
+.btn button::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left,rgba(255,255,255,0.15),transparent);
+  transform: skewX(30deg) translateX(0);
+  transition: 0.5s;
+}
+.btn button:hover::before {
+  transform: skewX(30deg) translateX(200%);
+  
+}
+
+
+/* About me */
+
+
+.skills{
+  padding: 0 2rem;
+  box-sizing: border-box;
+    /* font-family: 'Poppins', sans-serif; */
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px ;
+  place-content: space-around;
+  /* flex-wrap: wrap; */
+  min-height: 50vh
+  
+
+}
+
+
+.circle1,.circle2{
+  filter: blur(60px);
+}
+
+
+@media (max-width:768px) {
+  .circle1{
+    width: 10vh;
+    height: 10vh;
+  }
+  
+}
+
+.card{
+ position: relative;
+ width: 400px;
+ height: 200px; 
+ display: flex; 
+ border-radius: 20px;
+ transition: 0.5s ease-in-out;
+ transition-delay: 0.1s; 
+}
+.card:hover{
+  width: 400px;
+}
+
+.card .circLe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  }
+
+
+.card .circle::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  clip-path: circle(120px at center);
+  transition: 0.5s;
+  object-fit: cover;
+  
+}
+.card:hover .circle:before{
+  background: #143943;
+  clip-path: circle(400px at center);
+}
+
+.card img{
+  position: relative;
+  transition: 0.5s ease;
+  width: 150px;
+  height: 150px;
+}
+
+.img-cont :hover  img{
+  position: relative;
+  width: 150px;  
+  height: auto;
+ 
+  
+
+}
+
+.card .con{
+  position: absolute;
+  width: 60%;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  /* transition: 0.5s opacity,  */
+  
+}
+.img-cont{ 
+  position: relative;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.img-cont:hover{  
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 10px;
+}
+.card:hover .con
+{
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* .sname{
+  opacity: 1;
+  transform: translate(-40%,90%);
+}
+.sname:hover{
+  opacity: 0;
+  transform: translate(-40%,90%);
+} */
